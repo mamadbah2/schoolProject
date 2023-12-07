@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font-family: Codec, Arial, Helvetica, sans-serif;
+
+}
+
+header {
+    padding: 10px;
+    height: 100%;
+    width: 250px;
+    background-color: #329DD3;
+    display: flex;
+    flex-direction: column;
+    color: #212121;
+    align-items: center;
+    height: 100vh;
+}
+
+header h1 {
+    text-align: center;
+    font-family: Codec, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+header .profile {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    background-color: #212121;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 1px -1px 10px #212121;
+}
+
+header .profile img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+header .profile h3 {
+    margin-left: 10px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+header .info {
+    margin-top: 45px;
+
+}
+
+header .info .card-inner {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .info .card-inner p {
+    text-align: center;
+    font-weight: normal;
+}
+
+header .info .card-inner p span {
+    color: #212121;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+
+/* from UIVERSE.IO for card at left */
+
+.card {
+    width: 190px;
+    height: 254px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#212121, #272727);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+}
+
+.circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+}
+
+@keyframes move-up6 {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes move-down1 {
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* End of Black card at left  */
+
+/* Bouton Integrée */
+button {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #212121;
+    padding: 1em 2em;
+    border: none;
+    border-radius: .6rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button span:not(:nth-child(6)) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: #329DD3;
+    border-radius: 50%;
+    transition: .6s ease;
+}
+
+button span:nth-child(6) {
+    position: relative;
+}
+
+button span:nth-child(1) {
+    transform: translate(-3.3em, -4em);
+}
+
+button span:nth-child(2) {
+    transform: translate(-6em, 1.3em);
+}
+
+button span:nth-child(3) {
+    transform: translate(-.2em, 1.8em);
+}
+
+button span:nth-child(4) {
+    transform: translate(3.5em, 1.4em);
+}
+
+button span:nth-child(5) {
+    transform: translate(3.5em, -3.8em);
+}
+
+button:hover span:not(:nth-child(6)) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: 1.5s ease;
+}
+
+/* End of Black Button  */
+
+
+/* h1 Demande Integer */
+.container {
+    background-color: #212121;
+    border-radius: 15px;
+    display: flex;
+    padding: .7rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    font-size: 2.2em;
+    text-shadow: 4px 4px 0px #329DD3;
+    color: #212121;
+    mix-blend-mode: screen;
+    animation: fadeIn 2.5s linear forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* End of h1  */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+/* For Table */
+
+.contain {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: #212121 solid 2px;
+    margin : auto;
+    display: block; */
+    margin: 40px;
+}
+
+table {
+    /* width: 800px; */
+    width: 75vw;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.5);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #212121;
+}
+
+th {
+    text-align: left;
+}
+
+thead th {
+    background-color: #329DD3;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+tbody td {
+    position: relative;
+}
+
+tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+tbody td a{
+    color: #212121;
+    text-decoration: dotted;
+}
+
+/* End of table  */
+
+/* For Form Etat  */
+main>form {
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    display: flex;
+}
+
+.boxForm {
+    margin: 10px;
+}
+
+.boxForm select {
+    background-color: #329DD3;
+    color: #212121;
+    padding: 7px;
+    width: 250px;
+    border: none;
+    font-size: 1.1em;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.boxForm::before {
+    content: "\f13a";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.boxForm:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.boxForm select option {
+    padding: 30px;
+}
+
+.boxForm .submitFilter {
+    padding: 7px 10px;
+    font-size: 1.1em;
+    border: none;
+    background-color: #212121;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* End of form  */
