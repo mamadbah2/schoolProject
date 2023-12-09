@@ -96,19 +96,19 @@ header .card {
     border-radius: 8px;
 }
 
-.card:hover {
+/* .card:hover {
     transform: scale(1.04) rotate(1deg);
-}
+} */
 
-.circle {
+/* .circle {
     width: 100px;
     height: 100px;
     background: radial-gradient(#212121, #272727);
     border-radius: 50%;
     position: absolute;
     animation: move-up6 2s ease-in infinite alternate-reverse;
-}
-
+} */
+/* 
 .circle:nth-child(1) {
     top: -25px;
     left: -25px;
@@ -118,9 +118,9 @@ header .card {
     bottom: -25px;
     right: -25px;
     animation-name: move-down1;
-}
+} */
 
-@keyframes move-up6 {
+/* @keyframes move-up6 {
     to {
         transform: translateY(-10px);
     }
@@ -130,7 +130,7 @@ header .card {
     to {
         transform: translateY(10px);
     }
-}
+} */
 
 /* End of Black card at left  */
 
@@ -149,7 +149,7 @@ button {
     overflow: hidden;
 }
 
-button span:not(:nth-child(6)) {
+/* button span:not(:nth-child(6)) {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -188,7 +188,7 @@ button span:nth-child(5) {
 button:hover span:not(:nth-child(6)) {
     transform: translate(-50%, -50%) scale(4);
     transition: 1.5s ease;
-}
+} */
 
 /* End of Black Button  */
 

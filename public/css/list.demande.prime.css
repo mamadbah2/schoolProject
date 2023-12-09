@@ -94,11 +94,11 @@ header .info .card-inner p span {
     border-radius: 8px;
 }
 
-.card:hover {
+/* .card:hover {
     transform: scale(1.04) rotate(1deg);
-}
+} */
 
-.circle {
+/* .circle {
     width: 100px;
     height: 100px;
     background: radial-gradient(#212121, #272727);
@@ -116,9 +116,9 @@ header .info .card-inner p span {
     bottom: -25px;
     right: -25px;
     animation-name: move-down1;
-}
+} */
 
-@keyframes move-up6 {
+/* @keyframes move-up6 {
     to {
         transform: translateY(-10px);
     }
@@ -128,7 +128,7 @@ header .info .card-inner p span {
     to {
         transform: translateY(10px);
     }
-}
+} */
 
 /* End of Black card at left  */
 
@@ -147,7 +147,7 @@ button {
     overflow: hidden;
 }
 
-button span:not(:nth-child(6)) {
+/* button span:not(:nth-child(6)) {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -157,13 +157,13 @@ button span:not(:nth-child(6)) {
     background-color: #329DD3;
     border-radius: 50%;
     transition: .6s ease;
-}
+} */
 
 button span:nth-child(6) {
     position: relative;
 }
 
-button span:nth-child(1) {
+/* button span:nth-child(1) {
     transform: translate(-3.3em, -4em);
 }
 
@@ -186,7 +186,7 @@ button span:nth-child(5) {
 button:hover span:not(:nth-child(6)) {
     transform: translate(-50%, -50%) scale(4);
     transition: 1.5s ease;
-}
+} */
 
 /* End of Black Button  */
 
@@ -209,7 +209,7 @@ button:hover span:not(:nth-child(6)) {
     animation: fadeIn 2.5s linear forwards;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0
     }
@@ -217,7 +217,7 @@ button:hover span:not(:nth-child(6)) {
     100% {
         opacity: 1;
     }
-}
+} */
 
 /* End of h1  */
 
@@ -331,18 +331,19 @@ main>form {
     pointer-events: none;
 }
 
-.boxForm:hover::before {
+/* .boxForm:hover::before {
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 .boxForm select option {
     padding: 30px;
 }
 
-.boxForm .submitFilter {
-    padding: 7px 10px;
-    font-size: 1.1em;
+.submitFilter {
+    transform: translateY(10px);
+    height: 35px;
+    font-size: .9em;
     border: none;
     background-color: #212121;
     color: #fff;

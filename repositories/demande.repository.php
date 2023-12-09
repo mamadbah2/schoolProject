@@ -15,13 +15,15 @@
 // fonction qui retourne le tableau de demande par etat
 
 
+// En changeant '
+
 function generateurChaine(): string
 {
    $char = 'AZERTYUIOPQSDFGHJKLMWXCVBN123456789azertyuiopqsdfghjklmwxcvbn';
    $val = '';
    for ($i = 0; $i < 5; $i++) {
       $nb = rand(0, strlen($char) - 1);
-      $val += $char[$nb];
+      $val = $val . $char[$nb];
    }
    return $val;
 }
@@ -36,113 +38,159 @@ function doublonData(array $table, $data): bool
    return false;
 }
 
-
-function giveDataDemande($type = "", $etat = ""): array
+function connection(string $login, string $password): int
 {
-   $demande = [
+   $etudiant = getDataEtudiant();
+   foreach ($etudiant as $value) {
+      if ($value["login"] == $login && $value["password"]==$password) {
+         return $value["id"];
+      }
+   }
+   return 0;
+}
+
+function getDataEtudiant(): array
+{
+   return [
       [
+         "id" => 1,
+         "matricule" => "M123",
+         "nom" => "Bah",
+         "prenom" => "Mamadou",
+         "dateNaissance" => "21-02-2002",
+         "login" => "mamadbah",
+         "password" => "passer123",
+         "classeId" => 1
+      ],
+      [
+         "id" => 2,
+         "matricule" => "M113",
+         "nom" => "Camara",
+         "prenom" => "Aly",
+         "dateNaissance" => "01-05-2002",
+         "login" => "alcam",
+         "password" => "passal2",
+         "classeId" => 2
+      ],
+      [
+         "id" => 3,
+         "matricule" => "M423",
+         "nom" => "Bah",
+         "prenom" => "Aissatou",
+         "dateNaissance" => "28-02-2005",
+         "login" => "aissba",
+         "password" => "pas123#",
+         "classeId" => 1
+      ],
+      [
+         "id" => 4,
+         "matricule" => "M567",
+         "nom" => "Conde",
+         "prenom" => "Mory",
+         "dateNaissance" => "25-12-2004",
+         "login" => "morcon",
+         "password" => "mrConde3",
+         "classeId" => 3
+      ]
+   ];
+}
+
+function getDataClasse(): array
+{
+   return [
+      [
+         "id" => 1,
+         "niveau" => "L2",
+         "filiere" => "GLRS",
+         "code" => "A"
+      ],
+      [
+         "id" => 2,
+         "niveau" => "L2",
+         "filiere" => "GLRS",
+         "code" => "B"
+      ],
+      [
+         "id" => 3,
+         "niveau" => "L2",
+         "filiere" => "ETSE",
+         "code" => "A"
+      ]
+   ];
+}
+
+function getDataAnnee(): array
+{
+   return [
+      [
+         "id" => 1,
+         "anneeScolaire" => "2021-2022",
+         "etat" => False
+      ],
+      [
+         "id" => 2,
+         "anneeScolaire" => "2022-2023",
+         "etat" => True,
+      ]
+   ];
+}
+
+
+function getDataDemande(): array
+{
+   return [
+      [
+         "id" => 1,
          "numero" => generateurChaine(),
          "date" => "31-03-2023",
          "etat" => "en cours",
          "type" => "suspension",
          "motif" => "probleme personnel",
-         "etudiant" => [
-            "matricule" => "M123",
-            "nom" => "Bah",
-            "prenom" => "Mamadou",
-            "dateNaissance" => "21-02-2002",
-            "classe" => [
-               "niveau" => "L2",
-               "filiere" => "GLRS",
-               "code" => "A"
-            ]
-         ]
+         "anneeId" => 1,
+         "etudiantId" => 2
       ],
       [
+         "id" => 2,
          "numero" => generateurChaine(),
-         "date" => "22-01-2023",
+         "date" => "22-01-2021",
          "etat" => "en cours",
          "type" => "annulation",
          "motif" => "raisons medicales",
-         "etudiant" => [
-            "matricule" => "M113",
-            "nom" => "Camara",
-            "prenom" => "Aly",
-            "dateNaissance" => "01-05-2002",
-            "classe" => [
-               "niveau" => "L2",
-               "filiere" => "IAGE",
-               "code" => "B"
-            ]
-         ]
+         "anneeId" => 2,
+         "etudiantId" => 1
       ],
       [
+         "id" => 3,
          "numero" => generateurChaine(),
          "date" => "09-05-2023",
          "etat" => "refuse",
          "type" => "suspension",
          "motif" => "motif social",
-         "etudiant" => [
-            "matricule" => "M423",
-            "nom" => "Bah",
-            "prenom" => "Aissatou",
-            "dateNaissance" => "28-02-2005",
-            "classe" => [
-               "niveau" => "L2",
-               "filiere" => "MAIE",
-               "code" => "D"
-            ]
-         ]
+         "anneeId" => 2,
+         "etudiantId" => 1
       ],
       [
+         "id" => 4,
          "numero" => generateurChaine(),
          "date" => "31-03-2023",
          "etat" => "accepte",
          "type" => "suspension",
          "motif" => "probleme personnel",
-         "etudiant" => [
-            "matricule" => "M903",
-            "nom" => "Gueye",
-            "prenom" => "Moustapha",
-            "dateNaissance" => "08-10-2005",
-            "classe" => [
-               "niveau" => "L1",
-               "filiere" => "GLRS",
-               "code" => "B"
-            ]
-         ]
+         "anneeId" => 2,
+         "etudiantId" => 3
       ],
       [
+         "id" => 5,
          "numero" => generateurChaine(),
          "date" => "31-03-2023",
          "etat" => "en cours",
          "type" => "suspension",
          "motif" => "sans motif apparent",
-         "etudiant" => [
-            "matricule" => "M567",
-            "nom" => "Conde",
-            "prenom" => "Mory",
-            "dateNaissance" => "25-12-2004",
-            "classe" => [
-               "niveau" => "L2",
-               "filiere" => "ETSE",
-               "code" => "B"
-            ]
-         ]
+         "anneeId" => 2,
+         "etudiantId" => 4
       ]
    ];
-   $tabFiltered = [];
-   for ($i = 0; $i < count($demande); $i++) {
-      if ($type == $demande[$i]["type"] && !doublonData($demande, $demande[$i])) {
-         $tabFiltered[] = $demande[$i];
-      }
-   }
-   for ($i = 0; $i < count($demande); $i++) {
-      if ($etat== $demande[$i]["etat"] && !doublonData($demande, $demande[$i])) {
-         $tabFiltered[] = $demande[$i];
-      }
-   }
-   return $tabFiltered;
 }
+
 
 ?>

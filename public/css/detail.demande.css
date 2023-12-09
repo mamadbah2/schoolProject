@@ -96,11 +96,11 @@ header .card {
     border-radius: 8px;
 }
 
-header .card:hover {
+/* header .card:hover {
     transform: scale(1.04) rotate(1deg);
-}
+} */
 
-.circle {
+/* .circle {
     width: 100px;
     height: 100px;
     background: radial-gradient(#212121, #272727);
@@ -130,7 +130,7 @@ header .card:hover {
     to {
         transform: translateY(10px);
     }
-}
+} */
 
 /* End of Black card at left  */
 
@@ -185,10 +185,10 @@ button span:nth-child(5) {
     transform: translate(3.5em, -3.8em);
 }
 
-button:hover span:not(:nth-child(6)) {
+/* button:hover span:not(:nth-child(6)) {
     transform: translate(-50%, -50%) scale(4);
     transition: 1.5s ease;
-}
+} */
 
 /* End of Black Button  */
 
@@ -211,7 +211,7 @@ button:hover span:not(:nth-child(6)) {
     animation: fadeIn 2.5s linear forwards;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0
     }
@@ -219,7 +219,7 @@ button:hover span:not(:nth-child(6)) {
     100% {
         opacity: 1;
     }
-}
+} */
 
 
 /* Fin d'integration header  */
@@ -283,11 +283,11 @@ main .card::before {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-main .card:hover::before {
+main .card::before {
     height: 100%;
 }
 
-main .card:hover {
+/* main .card:hover {
     box-shadow: none;
 }
 
@@ -300,7 +300,7 @@ main .content .btn:hover {
     outline: 2px solid #e8e8e8;
     background: transparent;
     color: #e8e8e8;
-}
+} */
 
 main .content .btn:active {
     box-shadow: none;
