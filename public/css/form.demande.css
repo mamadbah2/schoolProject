@@ -75,7 +75,12 @@ header .info .card-inner p span {
     font-size: 1.1em;
 }
 
-
+.card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* from UIVERSE.IO for card at left */
 

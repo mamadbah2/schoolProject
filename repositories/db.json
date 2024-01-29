@@ -4,10 +4,9 @@
             "id": 1,
             "numero": 1234,
             "date": "31-03-2023",
-            "etat": "en cours",
+            "etat": "refuser",
             "type": "suspension",
             "motif": "probleme personnel",
-            "role": "etudiant",
             "anneeId": 1,
             "etudiantId": 2
         },
@@ -15,10 +14,9 @@
             "id": 2,
             "numero": 1234,
             "date": "22-01-2021",
-            "etat": "en cours",
+            "etat": "refuser",
             "type": "annulation",
             "motif": "raisons medicales",
-            "role": "etudiant",
             "anneeId": 2,
             "etudiantId": 1
         },
@@ -46,11 +44,31 @@
             "id": 5,
             "numero": 1234,
             "date": "31-03-2023",
-            "etat": "en cours",
+            "etat": "accepter",
             "type": "suspension",
             "motif": "sans motif apparent",
             "anneeId": 2,
             "etudiantId": 4
+        },
+        {
+            "id": 6,
+            "numero": "dIp6r",
+            "date": "14-01-2024",
+            "etat": "en cours",
+            "type": "suspension",
+            "motif": "jhe,k,",
+            "anneeId": 2,
+            "etudiantId": 1
+        },
+        {
+            "id": 7,
+            "numero": "Y8kb7",
+            "date": "14-01-2024",
+            "etat": "en cours",
+            "type": "suspension",
+            "motif": "gvvg",
+            "anneeId": 2,
+            "etudiantId": 1
         }
     ],
     "Etudiants": [
@@ -62,7 +80,7 @@
             "dateNaissance": "21-02-2002",
             "login": "mamadbah",
             "password": "passer123",
-            "role": "RP",
+            "role": "ac",
             "classeId": 1
         },
         {
@@ -95,7 +113,7 @@
             "dateNaissance": "25-12-2004",
             "login": "morcon",
             "password": "mrConde3",
-            "role": "etudiant",
+            "role": "ac",
             "classeId": 3
         }
     ],
@@ -117,6 +135,36 @@
             "niveau": "L2",
             "filiere": "ETSE",
             "code": "A"
+        },
+        {
+            "id": 4,
+            "niveau": "L2",
+            "filiere": "CPD",
+            "code": "C"
+        },
+        {
+            "id": 5,
+            "niveau": "L2",
+            "filiere": "CDSD",
+            "code": "B"
+        },
+        {
+            "id": 6,
+            "niveau": "L1",
+            "filiere": "MAIE",
+            "code": "A"
+        },
+        {
+            "id": 7,
+            "niveau": "L3",
+            "filiere": "MAIE",
+            "code": "C"
+        },
+        {
+            "id": 7,
+            "niveau": "L3",
+            "filiere": "MAIE",
+            "code": "C"
         }
     ],
     "Annees": [
@@ -129,6 +177,86 @@
             "id": 2,
             "anneeScolaire": "2022-2023",
             "etat": true
+        }
+    ],
+    "Professeurs": [
+        {
+            "id": 1,
+            "nom": "Oumar Pinto",
+            "grade": "L2",
+            "classeId": [
+                2,
+                7,
+                3,
+                7
+            ],
+            "moduleId": [
+                1,
+                5
+            ]
+        },
+        {
+            "id": 2,
+            "nom": "Baila Wane",
+            "grade": "L2",
+            "classeId": [
+                5
+            ],
+            "moduleId": [
+                1,
+                2
+            ]
+        },
+        {
+            "id": 3,
+            "nom": "Aly Tall",
+            "grade": "L2",
+            "classeId": [
+                1,
+                2,
+                4
+            ],
+            "moduleId": [
+                3,
+                4
+            ]
+        },
+        {
+            "id": 4,
+            "nom": "Olivier Sall",
+            "grade": "L1",
+            "classeId": [
+                4
+            ],
+            "moduleId": [
+                6
+            ]
+        }
+    ],
+    "Modules": [
+        {
+            "id": 1,
+            "nom": "Business English"
+        },
+        {
+            "id": 2,
+            "nom": "Python"
+        },
+        {
+            "id": 3,
+            "nom": "Language C"
+        },
+        {
+            "id": 4,
+            "nom": "Technologie Web"
+        },
+        {
+            "id": 5,
+            "nom": "Arabic Course"
+        },
+        {
+            "id": 6,
+            "nom": "Design"
         }
     ]
 }

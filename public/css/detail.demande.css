@@ -85,6 +85,9 @@ header .card {
     transition: all 0.2s;
     position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-inner {
@@ -95,6 +98,8 @@ header .card {
     backdrop-filter: blur(10px);
     border-radius: 8px;
 }
+
+
 
 /* header .card:hover {
     transform: scale(1.04) rotate(1deg);
@@ -149,7 +154,7 @@ button {
     overflow: hidden;
 }
 
-button span:not(:nth-child(6)) {
+/* button span:not(:nth-child(6)) {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -159,9 +164,9 @@ button span:not(:nth-child(6)) {
     background-color: #329DD3;
     border-radius: 50%;
     transition: .6s ease;
-}
+} */
 
-button span:nth-child(6) {
+/* button span:nth-child(6) {
     position: relative;
 }
 
@@ -183,7 +188,7 @@ button span:nth-child(4) {
 
 button span:nth-child(5) {
     transform: translate(3.5em, -3.8em);
-}
+} */
 
 /* button:hover span:not(:nth-child(6)) {
     transform: translate(-50%, -50%) scale(4);
