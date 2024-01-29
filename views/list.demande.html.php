@@ -13,15 +13,15 @@
     include("header.demande.html.php");
     ?>
     <main>
-        <form action="#">
+        <form action="#" method="post" >
             <div class="boxForm">
                 <select name="etat">
-                <option value="" selected>Etat</option>
-                        <option value="suspension">Suspension</option>
-                        <option value="annulation">Annulation</option>
+                    <option value="Susp. & Annul" selected><?= $filterValue ?> -> All</option>
+                    <option value="suspension">Suspension</option>
+                    <option value="annulation">Annulation</option>
                 </select>
             </div>
-            <input class="submitFilter" type="submit" value="filtrer">
+            <input class="submitFilter" name="submitFilter" type="submit" value="filtrer">
         </form>
         <div class="contain">
             <table>
@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    foreach($mesDemandes as $demande) {
+                    foreach ($mesDemandes as $demande) {
                         echo '<tr>';
                         ?>
                         <td>
@@ -47,7 +47,7 @@
                         <td>
                             <?= $demande["etat"] ?>
                         </td>
-                        <td><a href="<?= "/?idDem=". $demande["id"] ?>">Voir détails</a></td>
+                        <td><a href="<?= "/?idDem=" . $demande["id"] ?>">Voir détails</a></td>
                         <?php
 
                         echo '</tr>';

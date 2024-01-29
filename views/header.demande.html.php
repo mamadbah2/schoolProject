@@ -47,6 +47,19 @@
                 </button>
                 <!-- Fin -->
             </a>
+            <a href="<?= PORT . "/?logout" ?>" style="margin-bottom: 10px;">
+                <!-- Bouton Integrée -->
+
+                <button type="reset" style="background:red;" >
+                    <span class="circle1"></span>
+                    <span class="circle2"></span>
+                    <span class="circle3"></span>
+                    <span class="circle4"></span>
+                    <span class="circle5"></span>
+                    <span class="text">Log out</span>
+                </button>
+                <!-- Fin -->
+            </a>
         </div>
     </div>
 

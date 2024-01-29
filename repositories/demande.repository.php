@@ -42,155 +42,53 @@ function connection(string $login, string $password): int
 {
    $etudiant = getDataEtudiant();
    foreach ($etudiant as $value) {
-      if ($value["login"] == $login && $value["password"]==$password) {
+      if ($value["login"] == $login && $value["password"] == $password) {
          return $value["id"];
+
       }
    }
    return 0;
 }
 
-function getDataEtudiant(): array
+
+
+function getDataEtudiant()
 {
-   return [
-      [
-         "id" => 1,
-         "matricule" => "M123",
-         "nom" => "Bah",
-         "prenom" => "Mamadou",
-         "dateNaissance" => "21-02-2002",
-         "login" => "mamadbah",
-         "password" => "passer123",
-         "classeId" => 1
-      ],
-      [
-         "id" => 2,
-         "matricule" => "M113",
-         "nom" => "Camara",
-         "prenom" => "Aly",
-         "dateNaissance" => "01-05-2002",
-         "login" => "alcam",
-         "password" => "passal2",
-         "classeId" => 2
-      ],
-      [
-         "id" => 3,
-         "matricule" => "M423",
-         "nom" => "Bah",
-         "prenom" => "Aissatou",
-         "dateNaissance" => "28-02-2005",
-         "login" => "aissba",
-         "password" => "pas123#",
-         "classeId" => 1
-      ],
-      [
-         "id" => 4,
-         "matricule" => "M567",
-         "nom" => "Conde",
-         "prenom" => "Mory",
-         "dateNaissance" => "25-12-2004",
-         "login" => "morcon",
-         "password" => "mrConde3",
-         "classeId" => 3
-      ]
-   ];
+   $tab = jsonToArray("../repositories/db.json");
+   return $tab["Etudiants"];;
 }
 
 function getDataClasse(): array
 {
-   return [
-      [
-         "id" => 1,
-         "niveau" => "L2",
-         "filiere" => "GLRS",
-         "code" => "A"
-      ],
-      [
-         "id" => 2,
-         "niveau" => "L2",
-         "filiere" => "GLRS",
-         "code" => "B"
-      ],
-      [
-         "id" => 3,
-         "niveau" => "L2",
-         "filiere" => "ETSE",
-         "code" => "A"
-      ]
-   ];
+   $tab = jsonToArray("../repositories/db.json");
+   return $tab["Classes"];
 }
 
 function getDataAnnee(): array
 {
-   return [
-      [
-         "id" => 1,
-         "anneeScolaire" => "2021-2022",
-         "etat" => False
-      ],
-      [
-         "id" => 2,
-         "anneeScolaire" => "2022-2023",
-         "etat" => True,
-      ]
-   ];
+   $tab = jsonToArray("../repositories/db.json");
+   return $tab["Annees"];;
 }
 
 
 function getDataDemande(): array
 {
-   return [
-      [
-         "id" => 1,
-         "numero" => generateurChaine(),
-         "date" => "31-03-2023",
-         "etat" => "en cours",
-         "type" => "suspension",
-         "motif" => "probleme personnel",
-         "anneeId" => 1,
-         "etudiantId" => 2
-      ],
-      [
-         "id" => 2,
-         "numero" => generateurChaine(),
-         "date" => "22-01-2021",
-         "etat" => "en cours",
-         "type" => "annulation",
-         "motif" => "raisons medicales",
-         "anneeId" => 2,
-         "etudiantId" => 1
-      ],
-      [
-         "id" => 3,
-         "numero" => generateurChaine(),
-         "date" => "09-05-2023",
-         "etat" => "refuse",
-         "type" => "suspension",
-         "motif" => "motif social",
-         "anneeId" => 2,
-         "etudiantId" => 1
-      ],
-      [
-         "id" => 4,
-         "numero" => generateurChaine(),
-         "date" => "31-03-2023",
-         "etat" => "accepte",
-         "type" => "suspension",
-         "motif" => "probleme personnel",
-         "anneeId" => 2,
-         "etudiantId" => 3
-      ],
-      [
-         "id" => 5,
-         "numero" => generateurChaine(),
-         "date" => "31-03-2023",
-         "etat" => "en cours",
-         "type" => "suspension",
-         "motif" => "sans motif apparent",
-         "anneeId" => 2,
-         "etudiantId" => 4
-      ]
-   ];
+   $tab = jsonToArray("../repositories/db.json");
+   return $tab["Demandes"];
 }
 
+function jsonToArray(string $path): array {
+   $content = file_get_contents($path);
+   $tabDataDemande = json_decode($content, true);
+   return $tabDataDemande;
+}
 
+function putInJson(array $data, string $category)
+{
+   $tab = jsonToArray("../repositories/db.json");
+   $tab[$category][]= $data;
+   $json = json_encode($tab);
+   file_put_contents("../repositories/db.json", $json);
+}
+// connection("mamadbah", "passer123");
 ?>

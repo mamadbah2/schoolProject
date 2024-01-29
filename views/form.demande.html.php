@@ -16,10 +16,10 @@
 
         <div class="card">
             <span class="title">Ajout Nouvelle Demande</span>
-            <form class="form" action=<?= PORT ?> method="post">
+            <form class="form" action=<?= PORT."/?action=list" ?> method="post">
                 <div class="group">
-                    <select name="etat">
-                        <option value="" selected>Etat</option>
+                    <select name="type">
+                        <option value="" selected>Type</option>
                         <option value="suspension">Suspension</option>
                         <option value="annulation">Annulation</option>
                     </select>
@@ -29,7 +29,7 @@
                     <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
                     <label for="comment">Motif</label>
                 </div>
-                <button type="submit">Enregistrer</button>
+                <input type="submit" name="submit" value="Enregistrer">
             </form>
         </div>
     </main>

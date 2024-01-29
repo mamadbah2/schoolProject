@@ -7,31 +7,35 @@
     <title>Document</title>
 </head>
 
-<body>
-    <?php 
-        include("header.demande.html.php");
+<body >
+    <?php
+    include("header.demande.html.php");
     ?>
 
-    <main>
+<main>
+        <div style="height:fit-content; border:1px solid black;display:flex;justify-content:center">
+            <img style="width: 130px;" src="img/profilH_rm.png" alt="#">
+            <h1> <?= $etudiant["nom"] . " " . $etudiant["prenom"] ?></h1>
+        </div>
         <div class="card">
             <div class="content">
                 <h3>
                     Type
                 </h3>
                 <p>
-                    <?= $allDemande[$idDem-1]["type"] ?>
+                    <?= $allDemande[$idDem - 1]["type"] ?>
                 </p>
                 <h3>
                     Motif
                 </h3>
                 <p class="para">
-                <?= $allDemande[$idDem-1]["motif"] ?>
+                    <?= $allDemande[$idDem - 1]["motif"] ?>
                 </p>
                 <h3>
                     Date
                 </h3>
                 <p>
-                <?= $allDemande[$idDem-1]["date"] ?> 
+                    <?= $allDemande[$idDem - 1]["date"] ?>
                 </p>
             </div>
         </div>
